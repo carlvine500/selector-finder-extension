@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Finder Extension",
+    "version": "6.3",
+    "description": "show the shortest selector, control+C copy selector",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "popup.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["content.js","finder.min.js"]
+    }],
+    "web_accessible_resources": [{
+      "resources": ["finder.min.js"],
+      "matches": ["<all_urls>"]
+    }]
+  }
+  
